@@ -1,0 +1,37 @@
+PROYECTO JUGUETERÍA - GUÍA PARA SUBIR LOS TESTS A TU REPOSITORIO
+
+1) Crear copia personal del profesor en GitHub:
+   https://github.com/andriufit/testmaster2026_joyfe/fork
+   (elige tu cuenta de GitHub y confirma Create fork)
+
+2) En tu ordenador, abre PowerShell, selecciona una carpeta y ejecuta:
+   git clone https://github.com/Jorgedlr700/testmaster2026_joyfe.git
+   cd testmaster2026_joyfe
+
+3) Descomprime Suite_Completa_Tests_Jugueteria.zip. COPIA el contenido de
+   Proyecto_Jugueteria_Tests (no la carpeta contenedora) dentro del repo
+   testmaster2026_joyfe. Sustituye .gitignore con la versión proporcionada.
+   Se deben fusionar las carpetas .github y tests con la raíz del repo.
+   NO borres ni modifiques app.py ni los requirements originales.
+
+4) Instala y ejecuta los tests:
+   py -m venv .venv
+   .venv\Scripts\activate
+   python -m pip install -r requirements-dev.txt
+   python -m pip install pytest-cov
+   python -m pytest -v
+   python -m pytest --cov=app --cov-report=term-missing
+
+5) Revisa que los tests se ejecuten correctamente y guarda los resultados.
+   Sube los ficheros nuevos a GitHub:
+   git add .gitignore .github/workflows/tests.yml README_TESTS.md tests
+   git commit -m "Añadir tests unitarios y de integracion a la API jugueteria"
+   git push origin main
+
+6) Comprueba el workflow en la pestaña 'Actions' de tu repositorio.
+   Entrega el enlace a tu repositorio personal, por ejemplo:
+   https://github.com/Jorgedlr700/testmaster2026_joyfe
+
+NOTA: Si PowerShell impide la activación del entorno virtual, puedes
+usar directamente .venv\Scripts\python.exe -m pip ... y
+.venv\Scripts\python.exe -m pytest -v.
